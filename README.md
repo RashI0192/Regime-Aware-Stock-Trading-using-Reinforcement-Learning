@@ -1,8 +1,6 @@
 # Regime-Aware-Stock-Trading-using-Reinforcement-Learning 
 
-3. Research Paper Implementation of CERL.ipynb(Certainty Equivalent Reinforcement Learning) - In progress as I am currently reading J.P. Morgan Research Paper:
-“Idiosyncrasies and Challenges of Data-Driven Learning in Electronic Trading”
-V. Bacoyannis, V. Glukhov, T. Jin, J. Kochems, D. Song (2018) and other series of paper released in it
+
 
 ## 3. `Research Paper Implementation of CERL.ipynb
 ### Certainty Equivalent Reinforcement Learning (CERL) – *In Progress*
