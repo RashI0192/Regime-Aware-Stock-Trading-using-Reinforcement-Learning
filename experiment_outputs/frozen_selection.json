@@ -1,0 +1,51 @@
+{
+  "dataset_sha256": "050162e746a59f0c6e0a144978afb4adddb65d8b72dd331c774210cbdec38a5b",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.17.1",
+    "matplotlib": "3.11.1",
+    "gym-anytrading": "2.0.0"
+  },
+  "seeds": [
+    7,
+    19,
+    43
+  ],
+  "transition_budget": 24000,
+  "fee_per_side": 0.001,
+  "gamma": 0.99,
+  "calibration_rows": 252,
+  "splits": {
+    "train": [
+      252,
+      1401
+    ],
+    "validation": [
+      1401,
+      1868
+    ],
+    "test": [
+      1868,
+      2335
+    ]
+  },
+  "selection_rule": "max median validation(log_growth - 0.5*abs(max_drawdown)); representative median-score seed",
+  "selected_name": "E9_adaptive_curriculum",
+  "selected_seed": 7,
+  "config": {
+    "name": "E9_adaptive_curriculum",
+    "tau": 0.5,
+    "prior": "hold",
+    "curriculum": "adaptive",
+    "adaptive": true,
+    "risk": 0.0,
+    "hierarchy": false,
+    "wrong_sign": false,
+    "sparse": false,
+    "parent": "E8_adaptive",
+    "hypothesis": "Training-only mastery checks control horizon advancement."
+  },
+  "test_used_for_selection": false,
+  "historical_test_previously_explored_in_EDA": true
+}

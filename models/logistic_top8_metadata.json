@@ -1,0 +1,47 @@
+{
+  "model_version": "logistic_top8-research-train-v1",
+  "model_name": "logistic_top8",
+  "decision_threshold": 0.53,
+  "training_rows": [
+    252,
+    1401
+  ],
+  "training_examples": 1148,
+  "feature_columns": [
+    "return_lag1",
+    "return_lag2",
+    "return_lag3",
+    "return_lag5",
+    "momentum5",
+    "momentum10",
+    "momentum20",
+    "trend_gap",
+    "price_sma20",
+    "macd_pct",
+    "rsi",
+    "volatility5",
+    "volatility20",
+    "vol_ratio",
+    "bb_width",
+    "range_pct",
+    "intraday",
+    "overnight",
+    "relative_volume",
+    "log_volume_change",
+    "signed_volume"
+  ],
+  "selected_features": [
+    0,
+    3,
+    6,
+    8,
+    9,
+    10,
+    14,
+    17
+  ],
+  "logistic_C": 0.1,
+  "dataset_sha256": "050162e746a59f0c6e0a144978afb4adddb65d8b72dd331c774210cbdec38a5b",
+  "source": "gym_anytrading.datasets.STOCKS_GOOGL",
+  "note": "Research artifact; not evidence of prospective trading performance."
+}

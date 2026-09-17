@@ -1,0 +1,13 @@
+child,parent,median_score_change,positive_seed_pairs,median_turnover_change,hypothesis
+E0_wrong_sign,E4_KL_medium,-0.060973484299730873,1,-22.0,Reverse cost sign in policy/backup to expose direction error.
+E1_sparse_updates,E4_KL_medium,0.029492719172573983,2,-12.0,Update only the last decision of each sampled chunk.
+E3_KL_weak,E2_Q_no_KL,-0.0034579418572062044,1,60.0,Weak uniform-prior regularization.
+E4_KL_medium,E2_Q_no_KL,-0.17028101643509988,0,210.0,Moderate uniform-prior regularization.
+E5_KL_strong,E4_KL_medium,-0.027861615741529816,1,10.0,Check whether excessive prior pressure hurts.
+E6_hold_prior,E4_KL_medium,0.22844441608378485,2,-186.0,State-dependent prior favors retaining exposure.
+E7_curriculum,E6_hold_prior,-0.007950202133339385,1,-10.0,21→60→90 sampling curriculum with the same economic reward.
+E8_adaptive,E7_curriculum,0.19750353742119478,2,0.0,Visit-based alpha and tau reduce confidence in rarely seen states.
+E9_adaptive_curriculum,E8_adaptive,0.054325379822703745,2,0.0,Training-only mastery checks control horizon advancement.
+E10_downside,E8_adaptive,-0.11620616156985791,1,8.0,Penalize squared daily downside without altering P&L reporting.
+E11_hierarchy,E4_KL_medium,0.3443522366270574,3,-208.0,Learn a five-session options manager with uniform prior.
+E12_hierarchy_curriculum,E11_hierarchy,-0.10700273059031484,1,-8.0,Add horizon curriculum to the same options manager.

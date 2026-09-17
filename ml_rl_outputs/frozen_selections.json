@@ -1,0 +1,271 @@
+{
+  "dataset_sha256": "050162e746a59f0c6e0a144978afb4adddb65d8b72dd331c774210cbdec38a5b",
+  "versions": {
+    "numpy": "2.4.6",
+    "pandas": "3.0.5",
+    "scipy": "1.17.1",
+    "scikit-learn": "1.9.0",
+    "matplotlib": "3.11.1",
+    "gym-anytrading": "2.0.0"
+  },
+  "bounds": {
+    "train": [
+      252,
+      1401
+    ],
+    "validation_tune": [
+      1401,
+      1634
+    ],
+    "validation_select": [
+      1634,
+      1868
+    ],
+    "test": [
+      1868,
+      2335
+    ]
+  },
+  "feature_columns": [
+    "return_lag1",
+    "return_lag2",
+    "return_lag3",
+    "return_lag5",
+    "momentum5",
+    "momentum10",
+    "momentum20",
+    "trend_gap",
+    "price_sma20",
+    "macd_pct",
+    "rsi",
+    "volatility5",
+    "volatility20",
+    "vol_ratio",
+    "bb_width",
+    "range_pct",
+    "intraday",
+    "overnight",
+    "relative_volume",
+    "log_volume_change",
+    "signed_volume"
+  ],
+  "classification_winner": "extra_trees",
+  "classification_threshold": 0.52,
+  "ML_trading_winner": "logistic_top8",
+  "RL_winner": "Double_Q_hybrid",
+  "RL_representative_seeds": {
+    "Double_Q": 19,
+    "Double_Q_curriculum": 43,
+    "Double_Q_downside": 7,
+    "Double_Q_hybrid": 43,
+    "Expected_SARSA": 19,
+    "Q_learning": 43,
+    "SARSA": 7,
+    "Soft_Q_KL": 7
+  },
+  "combined_trading_family": "ML_or_baseline",
+  "magnitude_winner": "forest_magnitude",
+  "ensemble_members": [
+    "gradient_boost",
+    "logistic_full",
+    "knn"
+  ],
+  "thresholds": {
+    "prior_baseline": {
+      "balanced_accuracy": 0.5,
+      "accuracy": 0.5
+    },
+    "logistic_compact": {
+      "balanced_accuracy": 0.51,
+      "accuracy": 0.49
+    },
+    "logistic_full": {
+      "balanced_accuracy": 0.52,
+      "accuracy": 0.5
+    },
+    "logistic_top8": {
+      "balanced_accuracy": 0.53,
+      "accuracy": 0.5
+    },
+    "random_forest": {
+      "balanced_accuracy": 0.55,
+      "accuracy": 0.45999999999999996
+    },
+    "extra_trees": {
+      "balanced_accuracy": 0.52,
+      "accuracy": 0.52
+    },
+    "hist_boost": {
+      "balanced_accuracy": 0.45,
+      "accuracy": 0.45
+    },
+    "gradient_boost": {
+      "balanced_accuracy": 0.53,
+      "accuracy": 0.53
+    },
+    "knn": {
+      "balanced_accuracy": 0.54,
+      "accuracy": 0.54
+    },
+    "naive_bayes": {
+      "balanced_accuracy": 0.55,
+      "accuracy": 0.55
+    },
+    "soft_vote": {
+      "balanced_accuracy": 0.55,
+      "accuracy": 0.5
+    },
+    "soft_vote_calibrated": {
+      "balanced_accuracy": 0.51,
+      "accuracy": 0.51
+    }
+  },
+  "ML_rules": {
+    "prior_baseline": {
+      "name": "direct",
+      "kind": "direct"
+    },
+    "logistic_compact": {
+      "name": "hysteresis55_45",
+      "kind": "hysteresis",
+      "enter": 0.55,
+      "exit": 0.45
+    },
+    "logistic_full": {
+      "name": "volatility_gate",
+      "kind": "volatility",
+      "enter": 0.55
+    },
+    "logistic_top8": {
+      "name": "hysteresis55_45",
+      "kind": "hysteresis",
+      "enter": 0.55,
+      "exit": 0.45
+    },
+    "random_forest": {
+      "name": "hysteresis60_40",
+      "kind": "hysteresis",
+      "enter": 0.6,
+      "exit": 0.4
+    },
+    "extra_trees": {
+      "name": "hysteresis55_45",
+      "kind": "hysteresis",
+      "enter": 0.55,
+      "exit": 0.45
+    },
+    "hist_boost": {
+      "name": "direct",
+      "kind": "direct"
+    },
+    "gradient_boost": {
+      "name": "hysteresis55_45",
+      "kind": "hysteresis",
+      "enter": 0.55,
+      "exit": 0.45
+    },
+    "knn": {
+      "name": "volatility_gate",
+      "kind": "volatility",
+      "enter": 0.55
+    },
+    "naive_bayes": {
+      "name": "hysteresis60_40",
+      "kind": "hysteresis",
+      "enter": 0.6,
+      "exit": 0.4
+    },
+    "soft_vote": {
+      "name": "hysteresis55_45",
+      "kind": "hysteresis",
+      "enter": 0.55,
+      "exit": 0.45
+    },
+    "soft_vote_calibrated": {
+      "name": "direct",
+      "kind": "direct"
+    }
+  },
+  "RL_configs": [
+    {
+      "name": "Q_learning",
+      "algorithm": "q",
+      "hybrid": false,
+      "curriculum": false,
+      "risk": 0.0,
+      "tau": 0.5
+    },
+    {
+      "name": "SARSA",
+      "algorithm": "sarsa",
+      "hybrid": false,
+      "curriculum": false,
+      "risk": 0.0,
+      "tau": 0.5
+    },
+    {
+      "name": "Expected_SARSA",
+      "algorithm": "expected",
+      "hybrid": false,
+      "curriculum": false,
+      "risk": 0.0,
+      "tau": 0.5
+    },
+    {
+      "name": "Double_Q",
+      "algorithm": "double",
+      "hybrid": false,
+      "curriculum": false,
+      "risk": 0.0,
+      "tau": 0.5
+    },
+    {
+      "name": "Soft_Q_KL",
+      "algorithm": "soft",
+      "hybrid": false,
+      "curriculum": false,
+      "risk": 0.0,
+      "tau": 0.5
+    },
+    {
+      "name": "Double_Q_hybrid",
+      "algorithm": "double",
+      "hybrid": true,
+      "curriculum": false,
+      "risk": 0.0,
+      "tau": 0.5
+    },
+    {
+      "name": "Double_Q_curriculum",
+      "algorithm": "double",
+      "hybrid": false,
+      "curriculum": true,
+      "risk": 0.0,
+      "tau": 0.5
+    },
+    {
+      "name": "Double_Q_downside",
+      "algorithm": "double",
+      "hybrid": false,
+      "curriculum": false,
+      "risk": 5,
+      "tau": 0.5
+    }
+  ],
+  "RL_budget": 24000,
+  "training_seeds": [
+    7,
+    19,
+    43
+  ],
+  "validation_execution_seeds": [
+    101,
+    211,
+    307,
+    401,
+    503
+  ],
+  "fee_per_side": 0.001,
+  "test_used_for_current_selection": false,
+  "test_previously_explored": true
+}

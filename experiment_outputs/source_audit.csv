@@ -1,0 +1,14 @@
+original_cell,issue,evidence,correction
+6,Synthetic dates,pd.bdate_range replaces the source index,Preserve original dates.
+"25,27",Reward/cost sign conflict,"exp(-G/tau) favors lower values, but G is updated with positive rewards",Use cost=-reward consistently and a soft minimum backup.
+"27,60",Sparse credit assignment,Only the final state/action receives the episode reward,Update every primitive transition or every completed option.
+"23,60",Missing portfolio state,"pos is sign of a price change, not current holding",Include actual cash/long position in the state.
+"27,60",Repeated initial window,reset starts at the same tick every episode,Sample starts across training history.
+"27,44,60",Unreliable risk denominator,std(diff(realized profit)) is often near zero while exposure exists,Use marked-to-market net log returns; inspect risk separately.
+"44,50,60",Moving reward target,"Baseline, bonus, cap and horizon change together",Keep economic objective fixed; ablate one mechanism at a time.
+"27,60",Non-G-learning backup,Expected G plus final-step KL is not the soft Bellman minimum,Use the prior-weighted log-sum-exp value.
+"27,60",Terminal/truncation ambiguity,Bootstrap is always added even after actual episode termination,Bootstrap sampling truncations; zero the value at actual terminal boundaries.
+60,Unused controls,sigma_cap is assigned but not used in compute_reward,Remove inert hyperparameters.
+60,Not a two-level policy,"Changing episode length supplies curriculum, but no manager/worker hierarchy",Add a manager over explicit multi-step options.
+"56,60",Same-window evaluation,Greedy evaluation resets to training start,Freeze models for chronological validation/test.
+60,Saved output/source mismatch,Saved diagnostics include Bonus text absent from saved code,Regenerate all outputs from this executable file.

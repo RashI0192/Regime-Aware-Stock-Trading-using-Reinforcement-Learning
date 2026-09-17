@@ -1,0 +1,5 @@
+question,selected_result,baseline_result,improved
+Did ordinary directional accuracy beat always-up?,0.5128755364806867,0.5600858369098712,False
+Did balanced accuracy beat always-up?,0.5201289599102887,0.5,True
+Did selected ML/baseline strategy beat buy-and-hold?,0.6996808528926384,0.5274283597560959,True
+Did selected RL mean return beat buy-and-hold?,0.36271884868608173,0.5274283597560959,False
